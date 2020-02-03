@@ -4,6 +4,12 @@ services:
         image: influxdb:1.7-alpine
         environment:
             - INFLUXDB_DB=jmeter
+            - INFLUXDB_CONFIG_PATH=/tmp/influx.conf
+        ports:
+            - "2003:2003" #Graphite
+            - "8086:8086" #Influx API
+        volumes:
+            - ./influxdb/influx.conf:/tmp/influx.conf
     jmeter:
         build:
             context: "jmeter"
