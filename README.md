@@ -22,6 +22,14 @@ Edit this dashboard on `grafana/dashboards/jmeter-cnt.json`
 
 ![demo1](.github/images/demo2.png)
 
+## HTTP Test Example
+
+Put your `.jmx`file on `test/default_test_plan.jmx` or change the environment variable `JMETER_TEST` on `docker-compose.yml` with your filename
+
+## Influxdb Tunning
+
+Edit `influxdb/influx.conf`
+
 ### 🏠 [Homepage](/)
 
 ## Build

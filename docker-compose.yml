@@ -10,6 +10,8 @@ services:
             - "8086:8086" #Influx API
         volumes:
             - ./influxdb/influx.conf:/tmp/influx.conf
+            # Uncomment to persist load tests data on disk
+            # - ./tmp/influx/data:/var/lib/influxdb/data
     jmeter:
         build:
             context: "jmeter"
