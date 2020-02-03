@@ -1,0 +1,12 @@
+# config file version
+apiVersion: 1
+
+# list of datasources
+datasources:
+- name: InfluxDB
+  type: influxdb
+  access: proxy
+  url: http://influxdb:8086
+  database: jmeter
+  version: 1
+  editable: false

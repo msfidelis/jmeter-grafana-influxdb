@@ -1,0 +1,33 @@
+version: '3'
+services:
+    influxdb:
+        image: influxdb:1.7-alpine
+        environment:
+            - INFLUXDB_DB=jmeter
+    jmeter:
+        build:
+            context: "jmeter"
+            args:
+            - jmeterVersion=5.2
+        environment:
+            - JMETER_TEST=default_test_plan.jmx
+            - JMETER_WEBURL=fodase.com
+            - JMETER_THREADS=5
+            - JMETER_DURATION=1200
+            - JMETER_RAMPUP=30
+        volumes:
+            - ./test:/jmeter/test/
+        depends_on:
+            - influxdb
+    grafana:
+        build:
+            context: "grafana"
+        ports:
+            - "3000:3000"
+        environment:
+            - GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-worldmap-panel,grafana-piechart-panel
+        volumes:
+            - ./grafana/dashboards/jmeter-cnt.json:/var/lib/grafana/dashboards/jmeter-cnt.json
+        depends_on:
+            - influxdb
+            - jmeter
