@@ -18,9 +18,9 @@
 
 Edit this dashboard on `grafana/dashboards/jmeter-cnt.json`
 
-![demo1](./github/demo1.png)
+![demo1](.github/demo1.png)
 
-![demo1](./github/demo2.png)
+![demo1](.github/demo2.png)
 
 ### 🏠 [Homepage](/)
 
