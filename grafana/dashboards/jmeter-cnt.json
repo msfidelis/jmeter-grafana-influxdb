@@ -1644,7 +1644,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "JMeter Dashboard (3.2 and up)",
+  "title": "JMeter Dashboard",
   "version": 3,
-  "description": "Monitor your Jmeter load test in real time with InfluxDB and Grafana."
+  "description": "Jmeter, InfluxDB and Grafana."
 }
